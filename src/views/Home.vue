@@ -10,7 +10,7 @@
       <!-- Header -->
       <div class="card-header">
         <div class="mt-2">
-          <img class="image-logo" src="@/assets/010-soy-sauce-1.png">
+          <img class="image-logo" src="@/assets/256logo.png">
           <span class="HeaderFont"> Shabu </span>
         </div>
       </div>
