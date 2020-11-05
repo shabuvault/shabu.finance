@@ -198,14 +198,14 @@ display: none;
     data: function () {
       return {
         selectedPool: {},
-        shabuPrice: 1,
+        shabuPrice: 0.5,
         shabu: null,
         tokenAmount: 0,
         pools: [
           {
             'name': 'SHABU',
             'apy': 0,
-            'contract': '0x92bb01647680f8907383ac6c747359f1f6ef4729',
+            'contract': '0xB0dC1095D9A21Da8D391017F9c7CcB31564F309B',
             'initialReward': 5000,
             'risk': 'High',
             'reward': 'High',
@@ -215,7 +215,7 @@ display: none;
           {
             'name': 'SHABU/ETH UNISWAP LP',
             'apy': 0,
-            'contract': '',
+            'contract': '0xbA4f7C7cD24384247e021cA7F4256007bbA253FA',
             'initialReward': 10750,
             'risk': 'High',
             'reward': 'High',
@@ -225,7 +225,7 @@ display: none;
           {
             'name': 'WETH',
             'apy': 0,
-            'contract': '',
+            'contract': '0x198E5E89bdE49c0B8df7a741b2e0F40815dFcecF',
             'initialReward': 375,
             'risk': 'Medium',
             'reward': 'Medium',
@@ -235,7 +235,7 @@ display: none;
           {
             'name': 'WBTC',
             'apy': 0,
-            'contract': '',
+            'contract': '0x5D42d5bC30aA5621d32A8Dd12814b296048FEAeF',
             'initialReward': 375,
             'risk': 'Medium',
             'reward': 'Medium',
