@@ -11,7 +11,17 @@
 
         <!-- Nav Item Center -->
         <ul class="navbar-nav  flex-row ml-auto justify-content-between mx-auto ">
-          <li class="nav-item active">
+          <li class="nav-item">
+            <div class="dropdown">
+              <router-link to="/whitelist" class="nav-link">
+              <img class="icon-food" src="@/assets/020-dumpling-2.png"></router-link>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <span class="dropdown-item">Whitelist</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
             <div class="dropdown">
               <router-link to="/" class="nav-link">
               <img class="icon-food" src="@/assets/001-tempura.png"></router-link>
@@ -108,12 +118,14 @@
   // @ is an alias to /src
   // import HelloWorld from '@/components/HelloWorld.vue'
   import {} from 'vue-router'
+  import Web3 from 'web3'
   export default {
-    name: 'Home',
+    name: 'App',
     data: function () {
       return {
         walletStatus: 'pending',
         address: null,
+        client: null,
       }
     },
     methods: {
@@ -124,7 +136,7 @@
                 .then((address) => {
                     that.walletStatus = 'connected'
                     that.address = address[0]
-                   
+                    that.client = new Web3(window.web3.currentProvider)
                 })
                 .catch(() => {
                     
