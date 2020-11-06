@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Stake from '../views/Stake.vue'
 import Gov from '../views/Gov.vue'
 import Whitelist from '../views/Whitelist.vue'
+import OpenSale from '../views/OpenSale.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/whitelist',
     name: 'Whitelist',
     component: Whitelist
+  },
+  {
+    path: '/opensale',
+    name: 'OpenSale',
+    component: OpenSale
   }
 ]
 

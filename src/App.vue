@@ -13,6 +13,15 @@
         <ul class="navbar-nav  flex-row ml-auto justify-content-between mx-auto ">
           <li class="nav-item">
             <div class="dropdown">
+              <router-link to="/opensale" class="nav-link">
+              <img class="icon-food" src="@/assets/025-hot-pot.png"></router-link>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <span class="dropdown-item">PUBLIC SALE</span>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
               <router-link to="/whitelist" class="nav-link">
               <img class="icon-food" src="@/assets/020-dumpling-2.png"></router-link>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
