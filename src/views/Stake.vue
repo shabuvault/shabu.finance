@@ -45,7 +45,7 @@
         <p><button type="button" style="margin-right:10px;" class="btn btn-success btn-custom" @click="approve">Approve</button>
         <button type="button" style="margin-right:10px;" class="btn btn-danger btn-custom" @click="stake">Stake</button>
         <button type="button" style="margin-right:10px;" class="btn btn-info btn-custom" @click="claim">Claim</button>
-        <button type="button" class="btn btn-primary btn-custom">Unstake</button>
+        <button type="button" class="btn btn-primary btn-custom" @click="unstake">Unstake</button>
         </p>
       
 <div class="row">
@@ -270,9 +270,20 @@ display: none;
         contract.methods.stake(this.$parent.$data.client.utils.toWei(this.tokenAmount)).send({from: this.$parent.address})
       },
       claim: function () {
+                let parent = this.$parent.$data
 
+                let contract = new parent.client.eth.Contract(POOL_ABI, this.selectedPool.contract)
+
+        contract.methods.getRewardsAmount(this.$parent.address).call().then((data) => {
+            contract.methods.claim(data).send({from: this.$parent.address})
+        })
       },
         unstake: function () {
+                  let parent = this.$parent.$data
+
+                  let contract = new parent.client.eth.Contract(POOL_ABI, this.selectedPool.contract)
+
+                  contract.methods.withdraw(this.$parent.$data.client.utils.toWei(this.tokenAmount)).send({from: this.$parent.address})
 
         },
       refresh: function () {
