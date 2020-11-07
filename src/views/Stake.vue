@@ -213,6 +213,7 @@ display: none;
             'name': 'SHABU',
             'apy': 0,
             'contract': '0xB0dC1095D9A21Da8D391017F9c7CcB31564F309B',
+            'need': '0xDA8DD97b9C0a4f4691e8C88Fe47c740b70D5A449',
             'initialReward': 5000,
             'risk': 'High',
             'reward': 'High',
@@ -223,6 +224,7 @@ display: none;
             'name': 'SHABU/ETH UNISWAP LP',
             'apy': 0,
             'contract': '0xbA4f7C7cD24384247e021cA7F4256007bbA253FA',
+            'need': '0x17827d961B5fbFbb69FD74bEaD854FE5602621Ae',
             'initialReward': 10750,
             'risk': 'High',
             'reward': 'High',
@@ -233,6 +235,7 @@ display: none;
             'name': 'WETH',
             'apy': 0,
             'contract': '0x198E5E89bdE49c0B8df7a741b2e0F40815dFcecF',
+            'need': '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
             'initialReward': 375,
             'risk': 'Medium',
             'reward': 'Medium',
@@ -243,6 +246,7 @@ display: none;
             'name': 'WBTC',
             'apy': 0,
             'contract': '0x5D42d5bC30aA5621d32A8Dd12814b296048FEAeF',
+            'need': '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
             'initialReward': 375,
             'risk': 'Medium',
             'reward': 'Medium',
@@ -256,8 +260,9 @@ display: none;
     methods: {
       approve: function () {
         if(this.shabu == null) return;
-        console.log(this.tokenAmount)
-        this.shabu.methods.approve(this.selectedPool.contract, this.$parent.$data.client.utils.toWei(this.tokenAmount)).send({from: this.$parent.address})
+                let parent = this.$parent.$data
+        let need = new parent.client.eth.Contract(ERC_ABI, this.selectedPool.need)
+        need.methods.approve(this.selectedPool.contract, this.$parent.$data.client.utils.toWei(this.tokenAmount)).send({from: this.$parent.address})
       },
       stake: function () {
         let parent = this.$parent.$data
